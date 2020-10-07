@@ -59,9 +59,15 @@ function getWinners(data,cb) {
     let winners = [];
     for (let i = 0; i < finals.length; i++) {
         if (finals[i]['Home Team Goals'] > finals[i]['Away Team Goals']) {
-            winners.push(finals[i]['Home Team Name']);
+            winners.push({
+                teamName: finals[i]['Home Team Name'],
+                year: finals[i].Year
+            });
         } else {
-            winners.push(finals[i]['Away Team Name']);
+            winners.push({
+                teamName: finals[i]['Away Team Name'],
+                year: finals[i].Year
+            });
         }
     }
     return winners;
@@ -77,10 +83,10 @@ Parameters:
  */
 
 // function getWinnersByYear(cb1,cb2) {
-//     let winners = cb1(fifaData);
-//     let years = cb2(fifaData);
-//     let newStringArray = data.forEach(function(e) {
-//         return `In ${years(e)},${winners(e)} won the world cup!`
+//     let winners = cb1(fifaData, getFinals);
+//     // let years = cb2(fifaData);
+//     winners.forEach(function(e) {
+//         console.log(`In ${e.teamName},${e.year} won the world cup!`)
 //     });
 //     return newStringArray;
 // };
@@ -112,7 +118,6 @@ Hint: use `.reduce` */
 
 function getCountryWins(data,init) {
 
-    let totalWins = 
 
 };
 
